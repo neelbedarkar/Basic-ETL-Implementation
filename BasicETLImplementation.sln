@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "BasicETLImplementation", "BasicETLImplementation\BasicETLImplementation.dtproj", "{70B732E9-9393-4073-BF3B-3B5D8AFDF422}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70B732E9-9393-4073-BF3B-3B5D8AFDF422}.Development|Default.ActiveCfg = Development
+		{70B732E9-9393-4073-BF3B-3B5D8AFDF422}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BBB4AF9-6B95-4119-9CC7-AA4AD9123A1C}
+	EndGlobalSection
+EndGlobal
