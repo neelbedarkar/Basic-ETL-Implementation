@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{5DBA4D82-AEE7-42B0-9053-D7EA1B73BEE4}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{90875B6E-FB65-441E-9076-4C0E6281212F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7BE7D432-F994-4FE1-A395-E8498DB537A9}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.AdventureWorks]"
       DTS:CreationName="OLEDB"
@@ -44,13 +56,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\ExtractToStaging"
+      DTS:refId="Package\ExtractToStagingCust"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{829BEDFD-E129-4156-B3EE-4BE3C9FE82F3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="ExtractToStaging"
+      DTS:ObjectName="ExtractToStagingCust"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -58,7 +70,7 @@
           version="1">
           <components>
             <component
-              refId="Package\ExtractToStaging\AdventureWorksContact"
+              refId="Package\ExtractToStagingCust\AdventureWorksContact"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -107,7 +119,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\ExtractToStaging\AdventureWorksContact.Connections[OleDbConnection]"
+                  refId="Package\ExtractToStagingCust\AdventureWorksContact.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.AdventureWorks]"
                   connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.AdventureWorks]"
                   description="The OLE DB runtime connection used to access the database."
@@ -115,163 +127,163 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output]"
+                  refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[ContactID]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[ContactID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[ContactID]"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[ContactID]"
+                      externalMetadataColumnId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[ContactID]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[ContactID]"
                       name="ContactID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[FirstName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      externalMetadataColumnId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
                       length="50"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[FirstName]"
                       name="FirstName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[LastName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[LastName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      externalMetadataColumnId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
                       length="50"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[LastName]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[LastName]"
                       name="LastName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[EmailAddress]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      externalMetadataColumnId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
                       length="50"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[EmailAddress]"
                       name="EmailAddress"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[ContactID]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[ContactID]"
                       dataType="i4"
                       name="ContactID" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
                       dataType="bool"
                       name="NameStyle" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[Title]"
                       dataType="wstr"
                       length="8"
                       name="Title" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
                       dataType="wstr"
                       length="50"
                       name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
                       dataType="wstr"
                       length="50"
                       name="MiddleName" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
                       dataType="wstr"
                       length="50"
                       name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
                       dataType="wstr"
                       length="10"
                       name="Suffix" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
                       dataType="wstr"
                       length="50"
                       name="EmailAddress" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[EmailPromotion]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[EmailPromotion]"
                       dataType="i4"
                       name="EmailPromotion" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
                       dataType="wstr"
                       length="25"
                       name="Phone" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[PasswordHash]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[PasswordHash]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="PasswordHash" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[PasswordSalt]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[PasswordSalt]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="PasswordSalt" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[AdditionalContactInfo]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[AdditionalContactInfo]"
                       dataType="nText"
                       name="AdditionalContactInfo" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
                       dataType="guid"
                       name="rowguid" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
                       dataType="dbTimeStamp"
                       name="ModifiedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output]"
+                  refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ContactID]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ContactID]"
                       dataType="i4"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ContactID]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[ContactID]"
                       name="ContactID" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                       name="FirstName" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[LastName]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[LastName]"
                       name="LastName" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      refId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
                       name="EmailAddress" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -279,7 +291,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\ExtractToStaging\cust_staging Load"
+              refId="Package\ExtractToStagingCust\cust_staging Load"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -336,7 +348,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\ExtractToStaging\cust_staging Load.Connections[OleDbConnection]"
+                  refId="Package\ExtractToStagingCust\cust_staging Load.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.bedarkar-staging]"
                   connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.bedarkar-staging]"
                   description="The OLE DB runtime connection used to access the database."
@@ -344,58 +356,58 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input]"
+                  refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].Columns[ContactID]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].Columns[ContactID]"
                       cachedDataType="i4"
                       cachedName="ContactID"
-                      externalMetadataColumnId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[ContactID]"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[ContactID]" />
+                      externalMetadataColumnId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[ContactID]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[ContactID]" />
                     <inputColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].Columns[FirstName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="FirstName"
-                      externalMetadataColumnId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                      externalMetadataColumnId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[FirstName]" />
                     <inputColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].Columns[LastName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="LastName"
-                      externalMetadataColumnId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[LastName]" />
+                      externalMetadataColumnId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[LastName]" />
                     <inputColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].Columns[EmailAddress]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].Columns[EmailAddress]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="EmailAddress"
-                      externalMetadataColumnId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[EmailAddress]"
-                      lineageId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
+                      externalMetadataColumnId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[ContactID]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[ContactID]"
                       dataType="i4"
                       name="ContactID" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
                       dataType="wstr"
                       length="50"
                       name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
                       dataType="wstr"
                       length="50"
                       name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[EmailAddress]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input].ExternalColumns[EmailAddress]"
                       dataType="wstr"
                       length="50"
                       name="EmailAddress" />
@@ -404,22 +416,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\ExtractToStaging\cust_staging Load.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\ExtractToStagingCust\cust_staging Load.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\ExtractToStaging\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\ExtractToStagingCust\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\ExtractToStaging\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\ExtractToStagingCust\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\ExtractToStaging\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\ExtractToStagingCust\cust_staging Load.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -430,15 +442,460 @@
           </components>
           <paths>
             <path
-              refId="Package\ExtractToStaging.Paths[OLE DB Source Output]"
-              endId="Package\ExtractToStaging\cust_staging Load.Inputs[OLE DB Destination Input]"
+              refId="Package\ExtractToStagingCust.Paths[OLE DB Source Output]"
+              endId="Package\ExtractToStagingCust\cust_staging Load.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\ExtractToStaging\AdventureWorksContact.Outputs[OLE DB Source Output]" />
+              startId="Package\ExtractToStagingCust\AdventureWorksContact.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ExtractToStagingProd"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{06896081-3f30-45a5-97a1-68d5cde713f0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ExtractToStagingProd"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ExtractToStagingProd\AdventureWorksProduct"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="AdventureWorksProduct"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Production].[Product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ExtractToStagingProd\AdventureWorksProduct.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.AdventureWorks]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.AdventureWorks]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[Weight]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[Weight]"
+                      name="Weight"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductNumber]"
+                      dataType="wstr"
+                      length="25"
+                      name="ProductNumber" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[MakeFlag]"
+                      dataType="bool"
+                      name="MakeFlag" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[FinishedGoodsFlag]"
+                      dataType="bool"
+                      name="FinishedGoodsFlag" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockLevel]"
+                      dataType="i2"
+                      name="SafetyStockLevel" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ReorderPoint]"
+                      dataType="i2"
+                      name="ReorderPoint" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[StandardCost]"
+                      dataType="cy"
+                      name="StandardCost" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      dataType="cy"
+                      name="ListPrice" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Size]"
+                      dataType="wstr"
+                      length="5"
+                      name="Size" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[SizeUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="SizeUnitMeasureCode" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[WeightUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="WeightUnitMeasureCode" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      dataType="numeric"
+                      name="Weight"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[DaysToManufacture]"
+                      dataType="i4"
+                      name="DaysToManufacture" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                      dataType="wstr"
+                      length="2"
+                      name="ProductLine" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Class]"
+                      dataType="wstr"
+                      length="2"
+                      name="Class" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[Style]"
+                      dataType="wstr"
+                      length="2"
+                      name="Style" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryID]"
+                      dataType="i4"
+                      name="ProductSubcategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductModelID]"
+                      dataType="i4"
+                      name="ProductModelID" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[SellStartDate]"
+                      dataType="dbTimeStamp"
+                      name="SellStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[SellEndDate]"
+                      dataType="dbTimeStamp"
+                      name="SellEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].ExternalColumns[DiscontinuedDate]"
+                      dataType="dbTimeStamp"
+                      name="DiscontinuedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      dataType="cy"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      name="ListPrice" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      dataType="numeric"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      name="Weight"
+                      precision="8"
+                      scale="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ExtractToStagingProd\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[prod_staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ExtractToStagingProd\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.bedarkar-staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.bedarkar-staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ListPrice]"
+                      cachedDataType="cy"
+                      cachedName="ListPrice"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ListPrice]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[ListPrice]" />
+                    <inputColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weight]"
+                      cachedDataType="numeric"
+                      cachedName="Weight"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                      lineageId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output].Columns[Weight]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ListPrice]"
+                      dataType="cy"
+                      name="ListPrice" />
+                    <externalMetadataColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                      dataType="numeric"
+                      name="Weight"
+                      precision="8"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ExtractToStagingProd\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ExtractToStagingProd\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ExtractToStagingProd\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ExtractToStagingProd\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ExtractToStagingProd.Paths[OLE DB Source Output]"
+              endId="Package\ExtractToStagingProd\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\ExtractToStagingProd\AdventureWorksProduct.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{774438EB-71BD-458E-B52E-3868909E7486}"
+      DTS:From="Package\ExtractToStagingCust"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\ExtractToStagingProd" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -450,29 +907,55 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="159,42"
-          Id="Package\ExtractToStaging"
+          Size="180,42"
+          Id="Package\ExtractToStagingCust"
           TopLeft="128,65" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\ExtractToStagingProd"
+          TopLeft="128,157" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="218,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\ExtractToStaging">
+    design-time-name="Package\ExtractToStagingCust">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="192,42"
-          Id="Package\ExtractToStaging\AdventureWorksContact"
+          Id="Package\ExtractToStagingCust\AdventureWorksContact"
           TopLeft="266,43" />
         <NodeLayout
           Size="164,42"
-          Id="Package\ExtractToStaging\cust_staging Load"
+          Id="Package\ExtractToStagingCust\cust_staging Load"
           TopLeft="281,144" />
         <EdgeLayout
-          Id="Package\ExtractToStaging.Paths[OLE DB Source Output]"
+          Id="Package\ExtractToStagingCust.Paths[OLE DB Source Output]"
           TopLeft="362.5,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -497,7 +980,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\ExtractToStaging\AdventureWorksContact">
+    design-time-name="Package\ExtractToStagingCust\AdventureWorksContact">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -510,7 +993,71 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\ExtractToStaging\cust_staging Load">
+    design-time-name="Package\ExtractToStagingCust\cust_staging Load">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\ExtractToStagingProd">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\ExtractToStagingProd\AdventureWorksProduct"
+          TopLeft="266,43" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ExtractToStagingProd\OLE DB Destination"
+          TopLeft="284,174" />
+        <EdgeLayout
+          Id="Package\ExtractToStagingProd.Paths[OLE DB Source Output]"
+          TopLeft="365.75,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ExtractToStagingProd\AdventureWorksProduct">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ExtractToStagingProd\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
